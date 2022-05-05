@@ -1,3 +1,9 @@
+from rest_framework import routers
+from django.contrib import admin
+from django.conf.urls import include
+from django.urls import path
+from raterapi.views import register_user, login_user
+
 """gamerrater URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,9 +19,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+
+
+router = routers.DefaultRouter(trailing_slash=False)
 
 urlpatterns = [
+    path('register', register_user),
+    path('login', login_user),
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
 ]
