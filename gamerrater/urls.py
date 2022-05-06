@@ -2,7 +2,7 @@ from rest_framework import routers
 from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
-from raterapi.views import register_user, login_user
+from raterapp.views import register_user, login_user
 
 """gamerrater URL Configuration
 
