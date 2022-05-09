@@ -1,0 +1,17 @@
+
+[
+    {
+        "model": "raterapp.game",
+        "pk": 2,
+        "fields": {
+            "gamer": 1,
+            "title": "Uno",
+            "description": "Card game",
+            "designer": "Mattell",
+            "year_released": 2000,
+            "num_of_players": 2,
+            "estimated_time": 15,
+            "age": 4
+        }
+    }
+]    

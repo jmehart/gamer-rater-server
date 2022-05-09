@@ -5,6 +5,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
+from raterapp.models.gamer import Gamer
+
 
 # Tokens are used by a server and its clients. When the user first registers on the client a unique token is created for that user. The client uses the token in all fetch calls to the server to identify the user making the request.
 # The Token is sent back to the client so that it can be used on future requests to identify the user. This way, the user doesn't have to keep filling out their username and password each time a new action is performed.
@@ -59,14 +61,14 @@ def register_user(request):
         last_name=request.data['last_name']
     )
 
-    # Now save the extra info in the levelupapi_gamer table
-    # gamer = Gamer.objects.create(
-    #     bio=request.data['bio'],
-    #     user=new_user
-    # )
+    # Now save the extra info in the gamer table
+    gamer = Gamer.objects.create(
+        bio=request.data['bio'],
+        user=new_user
+    )
 
     # Use the REST Framework's token generator on the new user account
-    # token = Token.objects.create(user=gamer.user)
+    token = Token.objects.create(user=gamer.user)
     # # Return the token to the client
-    # data = { 'token': token.key }
-    # return Response(data)
+    data = { 'token': token.key }
+    return Response(data)
