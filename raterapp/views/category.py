@@ -9,32 +9,32 @@ from raterapp.models.category import Category
 
 
 class CategoryView(ViewSet):
+    """Level up game types view"""
 
     def retrieve(self, request, pk):
-        category = Category.objects.get(pk=pk)
-        serializer = GameSerializer(category)
-        return Response(serializer.data)
+        """Handle GET requests for single game type
+        Returns:
+            Response -- JSON serialized game type
+        """
+        try:
+            category = Category.objects.get(pk=pk)
+            serializer = CategorySerializer(category)
+            return Response(serializer.data)
+        except Category.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND) 
 
     def list(self, request):
+        """Handle GET requests to get all game types
+        Returns:
+            Response -- JSON serialized list of game types
+        """
         categories = Category.objects.all()
-        serializer = GameSerializer(categories, many=True)
+        serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data)
 
-    def create(self, request):
-        """Handle POST operations
-        Returns:
-            Response -- JSON serialized game instance
-        """
-        
-        try:
-            serializer = GameSerializer(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        except ValidationError as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
-
-
-class GameSerializer(serializers.ModelSerializer):
+class CategorySerializer(serializers.ModelSerializer):
+    """JSON serializer for game types
+    """
     class Meta:
         model = Category
-        fields = ['id', 'type']
+        fields = ('id', 'type')
