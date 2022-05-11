@@ -7,6 +7,10 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from raterapp.models.game import Game
 from raterapp.models.gamer import Gamer
+from raterapp.models.review import Review
+from raterapp.models.rating import Rating
+from raterapp.models.game_category import GameCategory
+
 
 
 class GameView(ViewSet):
@@ -74,10 +78,32 @@ class GameView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 
+class GameReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = ('id', 'game_id', 'gamer_id', 'review')
+
+class GameRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = ('id', 'game_id', 'gamer_id', 'rating')
+
+class GameCategorySerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = GameCategory
+        fields = ('id', 'cat_id', 'game_id')
+        depth = 1
+
 class GameSerializer(serializers.ModelSerializer):
+    """JSON serializer for games
+    Arguments:
+        serializer type
+    """
+    ratings = GameRatingSerializer
+    reviews = GameReviewSerializer(many=True)
     class Meta:
         model = Game
-        fields = ['id', 'title', 'description', 'designer', 'year_released', 'num_of_players', 'estimated_time', 'age', 'gamer', 'categories']
+        fields = ['id', 'title', 'description', 'designer', 'year_released', 'num_of_players', 'estimated_time', 'age', 'gamer', 'categories', 'reviews', 'average_rating']
         depth: 2
         
 class CreateGameSerializer(serializers.ModelSerializer):

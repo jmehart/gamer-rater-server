@@ -22,12 +22,9 @@ class Game(models.Model):
 
         # Sum all of the ratings for the game
         total_rating = 0
-        for rating in ratings:
-            total_rating += rating.rating
-
-        if total_rating == 0:
-            return 0
-        else:
+        if len(ratings) > 0:
+            for rating in ratings:
+                total_rating += rating.rating
         # Calculate the average and return it.
             average_rating = total_rating / len(ratings)
         return average_rating
