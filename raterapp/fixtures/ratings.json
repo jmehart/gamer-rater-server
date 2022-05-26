@@ -1,0 +1,20 @@
+[
+    {
+        "model": "raterapp.rating",
+        "pk": 1,
+        "fields": {
+            "gamer": 1,
+            "game": 2,
+            "rating": 1
+        }
+    },
+    {
+        "model": "raterapp.rating",
+        "pk": 2,
+        "fields": {
+            "gamer": 1,
+            "game": 4,
+            "rating": 4
+        }
+    }
+]

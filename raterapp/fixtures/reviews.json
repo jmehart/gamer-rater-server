@@ -1,0 +1,20 @@
+[
+    {
+        "model": "raterapp.review",
+        "pk": 1,
+        "fields": {
+            "gamer": 1,
+            "game": 2,
+            "review": "Could be better"
+        }
+    },
+    {
+        "model": "raterapp.review",
+        "pk": 2,
+        "fields": {
+            "gamer": 1,
+            "game": 4,
+            "review": "Amazing"
+        }
+    }
+]

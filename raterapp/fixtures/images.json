@@ -1,0 +1,20 @@
+[
+    {
+        "model": "raterapp.image",
+        "pk": 1,
+        "fields": {
+            "gamer": 1,
+            "game": 2,
+            "image": "https://picsum.photos/200"
+        }
+    },
+    {
+        "model": "raterapp.image",
+        "pk": 2,
+        "fields": {
+            "gamer": 1,
+            "game": 4,
+            "image": "https://picsum.photos/200"
+        }
+    }
+]

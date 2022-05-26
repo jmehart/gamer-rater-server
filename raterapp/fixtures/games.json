@@ -2,6 +2,20 @@
 [
     {
         "model": "raterapp.game",
+        "pk": 1,
+        "fields": {
+            "gamer": 1,
+            "title": "Sequence",
+            "description": "Card game",
+            "designer": "Goliath",
+            "year_released": 1982,
+            "num_of_players": 2,
+            "estimated_time": 30,
+            "age": 6
+        }
+    },
+    {
+        "model": "raterapp.game",
         "pk": 2,
         "fields": {
             "gamer": 1,
@@ -11,6 +25,34 @@
             "year_released": 2000,
             "num_of_players": 2,
             "estimated_time": 15,
+            "age": 4
+        }
+    },
+    {
+        "model": "raterapp.game",
+        "pk": 3,
+        "fields": {
+            "gamer": 1,
+            "title": "Test title",
+            "description": "Test Description",
+            "designer": "Test Designer",
+            "year_released": 2000,
+            "num_of_players": 2,
+            "estimated_time": 15,
+            "age": 5
+        }
+    },
+    {
+        "model": "raterapp.game",
+        "pk": 4,
+        "fields": {
+            "gamer": 1,
+            "title": "Battleship",
+            "description": "Call the shots and destroy",
+            "designer": "Milton Bradley",
+            "year_released": 1967,
+            "num_of_players": 2,
+            "estimated_time": 30,
             "age": 4
         }
     }
