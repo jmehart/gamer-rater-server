@@ -3,16 +3,16 @@
         "model": "raterapp.gameCategory",
         "pk": 1,
         "fields": {
-            "gameId": 1,
-            "categoryId": 1
+            "game": 1,
+            "category": 1
         }
     },
     {
         "model": "raterapp.gameCategory",
         "pk": 2,
         "fields": {
-            "gameId": 2,
-            "categoryId": 3
+            "game": 3,
+            "category": 3
         }
     }
 ]    

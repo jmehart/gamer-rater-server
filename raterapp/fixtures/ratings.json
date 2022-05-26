@@ -16,5 +16,23 @@
             "game": 4,
             "rating": 4
         }
+    },
+    {
+        "model": "raterapp.rating",
+        "pk": 3,
+        "fields": {
+            "gamer": 1,
+            "game": 1,
+            "rating": 3
+        }
+    },
+    {
+        "model": "raterapp.rating",
+        "pk": 4,
+        "fields": {
+            "gamer": 1,
+            "game": 2,
+            "rating": 1
+        }
     }
 ]

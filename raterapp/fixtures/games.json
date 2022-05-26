@@ -37,7 +37,7 @@
             "description": "Test Description",
             "designer": "Test Designer",
             "year_released": 2000,
-            "num_of_players": 2,
+            "num_of_players": 6,
             "estimated_time": 15,
             "age": 5
         }
@@ -53,6 +53,34 @@
             "year_released": 1967,
             "num_of_players": 2,
             "estimated_time": 30,
+            "age": 4
+        }
+    },
+    {
+        "model": "raterapp.game",
+        "pk": 5,
+        "fields": {
+            "gamer": 1,
+            "title": "Test pk 5",
+            "description": "testing 123",
+            "designer": "EA",
+            "year_released": 1999,
+            "num_of_players": 2,
+            "estimated_time": 30,
+            "age": 9
+        }
+    },
+    {
+        "model": "raterapp.game",
+        "pk": 6,
+        "fields": {
+            "gamer": 1,
+            "title": "Test pk 6",
+            "description": "just another test",
+            "designer": "Milton Bradley",
+            "year_released": 1920,
+            "num_of_players": 4,
+            "estimated_time": 45,
             "age": 4
         }
     }
