@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gamer Rater Reports</title>
+  </head>
+  <body>
+    <h1>Most Games Added By a Gamer</h1>
+    <ol>
+        {% for gamer in most_games_added_by_gamer_list %}
+            <li> {{ gamer.full_name }} - Game Count: {{ gamer.games_added }} </li>
+        {% endfor %}
+    </ol>
+  </body>
+</html>

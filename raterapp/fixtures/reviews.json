@@ -16,5 +16,14 @@
             "game": 4,
             "review": "Amazing"
         }
+    },
+    {
+        "model": "raterapp.review",
+        "pk": 3,
+        "fields": {
+            "gamer": 1,
+            "game": 4,
+            "review": "Holds up"
+        }
     }
 ]
