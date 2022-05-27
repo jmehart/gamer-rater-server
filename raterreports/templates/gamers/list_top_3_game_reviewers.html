@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gamer Rater Reports</title>
+  </head>
+  <body>
+    <h1>Top 3 Gamers With Most Reviews</h1>
+    <ol>
+        {% for gamer in top_3_game_reviewers_list %}
+            <li> {{ gamer.full_name }} - Games Reviewed: {{ gamer.review_count }} </li>
+        {% endfor %}
+    </ol>
+  </body>
+</html>

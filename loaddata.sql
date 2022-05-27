@@ -87,3 +87,10 @@
                         GROUP BY gr.id
                     )
                 )
+
+
+                SELECT g.*
+                FROM raterapp_game g
+                LEFT JOIN raterapp_image i
+                    ON i.game_id = g.id
+                WHERE i.image ISNULL

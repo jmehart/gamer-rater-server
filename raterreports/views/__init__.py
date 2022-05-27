@@ -4,3 +4,6 @@ from .games.games_by_category import CategoryGameCountList
 from .games.greater_than_5_player_games import GreaterThan5PlayersGameList
 from .games.most_reviewed_game import MostReviewedGameList
 from .gamers.most_games_added_by_gamer import MostGamesAddedByGamerList
+from .games.under_age_8_games import GamesUnderAge8List
+from .games.games_with_no_image import NoImageGamesList
+from .gamers.top_3_reviewers import Top3ReviewersList
